@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import AdSlot from "../components/AdSlot";
 
 export const metadata: Metadata = {
   title: "Insurance Guides & Cost Estimators",
@@ -84,7 +85,27 @@ export default function HomePage() {
         </p>
       </section>
 
-      {groups.map((group) => (
+      {groups.slice(0, 2).map((group) => (
+        <section key={group.heading} aria-label={`${group.heading} insurance guides`} className="pb-8">
+          <h2 className="text-2xl font-semibold">{group.heading}</h2>
+          <p className="mt-2 text-sm leading-relaxed text-slate-400">{group.blurb}</p>
+          <div className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {group.links.map((item) => (
+              <Link key={item.href} href={item.href} className="glass-card rounded-2xl p-6 text-left transition hover:border-amber-200/40">
+                <h3 className="text-lg font-semibold text-white">{item.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-slate-300">{item.description}</p>
+                <p className="mt-4 text-xs font-medium uppercase tracking-wider text-amber-200/70">
+                  Read the guide
+                </p>
+              </Link>
+            ))}
+          </div>
+        </section>
+      ))}
+
+      <AdSlot slot="TODO-insurance-display-home" format="display" />
+
+      {groups.slice(2).map((group) => (
         <section key={group.heading} aria-label={`${group.heading} insurance guides`} className="pb-8">
           <h2 className="text-2xl font-semibold">{group.heading}</h2>
           <p className="mt-2 text-sm leading-relaxed text-slate-400">{group.blurb}</p>

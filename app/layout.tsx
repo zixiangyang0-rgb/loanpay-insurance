@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import Script from "next/script";
 import Link from "next/link";
+import AdSlot from "../components/AdSlot";
+import Consent from "../components/consent";
+import { OrgJsonLd } from "../components/schema";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -76,6 +79,13 @@ function Footer() {
         © {new Date().getFullYear()} insurance.loanpaylogic.com. Educational
         estimates only — not professional insurance advice.
       </p>
+      <p className="mt-2 text-xs leading-relaxed">
+        We use cookies and Google AdSense advertising. See our{" "}
+        <Link href="/privacy-policy" className="underline hover:text-white">
+          Privacy Policy
+        </Link>{" "}
+        for ad choices and how to manage consent.
+      </p>
     </footer>
   );
 }
@@ -87,13 +97,22 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <OrgJsonLd />
+      </head>
       <body>
+        {/* Google Funding Choices (IAB TCF CMP for EEA/UK):
+            AdSense > Privacy & messaging > Create message > Publish, then paste
+            the generated fundingchoices script here. Keep this comment so the
+            CMP wiring point stays discoverable. */}
         <Header />
         <main>{children}</main>
         <Footer />
+        <AdSlot slot="TODO-insurance-anchor-mobile" format="anchor" />
+        <Consent />
         <Script
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4906207495792820"
-          strategy="lazyOnload"
+          strategy="afterInteractive"
           crossOrigin="anonymous"
         />
       </body>
