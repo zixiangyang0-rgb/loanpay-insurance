@@ -32,6 +32,9 @@ export const metadata: Metadata = {
     description:
       "Educational insurance cost estimators and plain-English guides for auto, home, life, pet, and renters coverage.",
   },
+  other: {
+    "google-adsense-account": "ca-pub-4906207495792820",
+  },
 };
 
 function Header() {
@@ -78,6 +81,13 @@ function Footer() {
       <p className="mt-4">
         © {new Date().getFullYear()} insurance.loanpaylogic.com. Educational
         estimates only — not professional insurance advice.
+      </p>
+      <p className="mt-2 text-xs">
+        LoanPay Logic Network:{" "}
+        <a href="https://loanpaylogic.com" className="underline hover:text-white">Mortgage &amp; Loan Calculators</a>{" "}
+        · <a href="https://auto.loanpaylogic.com" className="underline hover:text-white">Auto Financing</a>{" "}
+        · <a href="https://home.loanpaylogic.com" className="underline hover:text-white">Home Upkeep</a>{" "}
+        · <a href="https://pets.loanpaylogic.com" className="underline hover:text-white">Pet Care</a>
       </p>
       <p className="mt-2 text-xs leading-relaxed">
         We use cookies and Google AdSense advertising. See our{" "}
