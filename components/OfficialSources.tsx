@@ -33,9 +33,9 @@ const PRESETS: Record<Variant, { gov: SourceLink; authority: SourceLink }> = {
   },
   general: {
     gov: {
-      href: "https://www.naic.org/",
-      label: "NAIC — Consumer insurance resources",
-      blurb: "State-regulator guidance on shopping, complaints, and policy basics.",
+      href: "https://www.usa.gov/insurance",
+      label: "USA.gov — Insurance guidance (auto, home, life & health)",
+      blurb: "Federal portal linking to state regulators and insurance programs.",
     },
     authority: {
       href: "https://www.iii.org/",
