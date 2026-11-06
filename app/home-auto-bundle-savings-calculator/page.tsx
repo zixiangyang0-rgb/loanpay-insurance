@@ -304,31 +304,10 @@ export default function Page() {
       <section className="mt-10" aria-label="Related guides">
         <h2 className="text-2xl font-semibold text-white">Related guides</h2>
         <ul className="mt-3 list-disc space-y-2 pl-6 text-sm text-slate-300 sm:text-base">
-          <li>
-            <Link href="/bundling-home-auto-insurance" className="text-amber-200 underline hover:text-amber-100">
-              Bundling home and auto insurance: savings and tradeoffs
-            </Link>
-          </li>
-          <li>
-            <Link href="/homeowners-insurance-cost-guide" className="text-amber-200 underline hover:text-amber-100">
-              Homeowners insurance cost guide
-            </Link>
-          </li>
-          <li>
-            <Link href="/auto-insurance-cost-calculator" className="text-amber-200 underline hover:text-amber-100">
-              Auto insurance cost calculator
-            </Link>
-          </li>
-          <li>
-            <Link href="/how-insurance-premiums-are-calculated" className="text-amber-200 underline hover:text-amber-100">
-              How insurance premiums are calculated
-            </Link>
-          </li>
-          <li>
-            <Link href="/umbrella-insurance-explained" className="text-amber-200 underline hover:text-amber-100">
-              Umbrella insurance explained
-            </Link>
-          </li>
+          <li><Link href="/bundling-home-auto-insurance" className="text-amber-200 underline hover:text-amber-100">Bundling home and auto insurance: savings and tradeoffs</Link></li>
+          <li><Link href="/homeowners-insurance-cost-guide" className="text-amber-200 underline hover:text-amber-100">Homeowners insurance cost guide</Link></li>
+          <li><Link href="/auto-insurance-cost-calculator" className="text-amber-200 underline hover:text-amber-100">Auto insurance cost calculator</Link></li>
+          <li><Link href="/how-insurance-premiums-are-calculated" className="text-amber-200 underline hover:text-amber-100">How insurance premiums are calculated</Link></li>
         </ul>
       </section>
 
