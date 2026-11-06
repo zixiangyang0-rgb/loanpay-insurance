@@ -1,11 +1,40 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { Byline, GuideSchema } from "../../components/schema";
 
 export const metadata: Metadata = {
   title: "Renters Insurance Guide: Cost, Coverage & Claims",
   description: "Learn what renters insurance covers and costs: contents limits, liability, replacement cost vs. actual cash value, and roommate rules.",
   alternates: { canonical: "https://insurance.loanpaylogic.com/renters-insurance-guide" },
 };
+
+const guideFaqs: { question: string; answer: string }[] = [
+  {
+    question: "Does my landlord's insurance cover my stuff?",
+    answer:
+      "No. It covers the building and the landlord's liability, not your belongings, your liability, or your displacement costs. Leases often require you to carry renters coverage.",
+  },
+  {
+    question: "How much contents coverage do I need?",
+    answer:
+      "Inventory every room at replacement prices; most renters land between $20,000 and $40,000. Undercounting is the most common error, so video each room annually.",
+  },
+  {
+    question: "Do roommates share one policy?",
+    answer:
+      "Generally no. Unrelated roommates each need their own policy. One person's policy does not cover another roommate's belongings or liability.",
+  },
+  {
+    question: "Am I covered in a dorm?",
+    answer:
+      "Possibly under a parent's homeowners off-premises limits, but limits are low. Off-campus apartments almost always need a standalone renters policy.",
+  },
+  {
+    question: "Will a small claim raise my premium?",
+    answer:
+      "It can. Claims history follows you across carriers, so losses near the deductible are often cheaper paid out of pocket. Save insurance for large losses.",
+  },
+];
 
 export default function Page() {
   return (
@@ -14,6 +43,7 @@ export default function Page() {
       <h1 className="hero-title mt-4 text-3xl font-bold leading-tight sm:text-4xl">Renters insurance guide</h1>
       <p className="mt-5 text-base leading-relaxed text-slate-300 sm:text-lg">Your landlord's policy covers the building, never your belongings or your liability. Renters insurance fills that gap for roughly the cost of a streaming subscription or two, covering theft, fire, liability, and displacement costs. This guide explains HO-4 coverage, shows illustrative cost bands, covers roommates and dorms, and gives claims tips that protect future premiums. All figures are illustrative estimates, not quotes, and carrier names are only examples to compare.</p>
       <p className="mt-4 text-xs leading-relaxed text-slate-400">Updated: October 2026 — reviewed against publicly available 2026 insurer and state sources.</p>
+      <Byline />
         <section className="mt-10">
           <h2 className="text-2xl font-semibold text-white">What renters insurance covers</h2>
           <p className="mt-3 text-sm leading-relaxed text-slate-300 sm:text-base">Renters (HO-4) policies cover personal property against named perils such as fire, theft, and burst pipes, personal liability if you harm others or their property, medical payments to guests, and additional living expenses if a covered event displaces you. The landlord's policy covers the building only, never your belongings or liability, which is why many leases require proof of renters coverage. Replacement-cost contents settlement costs modestly more than actual cash value and pays far better after a loss.</p>
@@ -132,6 +162,12 @@ export default function Page() {
             .
           </p>
         </section>
+      <GuideSchema
+        title="Renters Insurance Guide: Cost, Coverage & Claims"
+        description="Learn what renters insurance covers and costs: contents limits, liability, replacement cost vs. actual cash value, and roommate rules."
+        slug="renters-insurance-guide"
+        faqs={guideFaqs}
+      />
     </div>
   );
 }
