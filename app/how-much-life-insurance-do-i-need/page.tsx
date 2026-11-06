@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import NeedsEstimator from "./calculator";
+import OfficialSources from "../../components/OfficialSources";
 
 export const metadata: Metadata = {
   title: "How Much Life Insurance Do I Need? DIME Worksheet",
@@ -85,6 +86,7 @@ export default function Page() {
             </div>
           </div>
         </section>
+        <OfficialSources variant="general" />
         <section className="mt-10" aria-label="Related guides">
           <h2 className="text-2xl font-semibold text-white">Related guides</h2>
           <ul className="mt-3 list-disc space-y-2 pl-6 text-sm text-slate-300 sm:text-base">

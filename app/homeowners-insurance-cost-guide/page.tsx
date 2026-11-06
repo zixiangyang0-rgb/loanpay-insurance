@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import AdSlot from "../../components/AdSlot";
 import { ArticleFaqJsonLd } from "../../components/schema";
+import OfficialSources from "../../components/OfficialSources";
 
 export const metadata: Metadata = {
   title: "Homeowners Insurance Cost Guide: Rates & Coverage",
@@ -105,6 +106,7 @@ export default function Page() {
           </div>
         </section>
         <AdSlot slot="TODO-insurance-multiplex-homeowners" format="multiplex" />
+        <OfficialSources variant="general" />
         <section className="mt-10" aria-label="Related guides">
           <h2 className="text-2xl font-semibold text-white">Related guides</h2>
           <ul className="mt-3 list-disc space-y-2 pl-6 text-sm text-slate-300 sm:text-base">
