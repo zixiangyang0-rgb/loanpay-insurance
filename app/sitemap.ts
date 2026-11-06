@@ -24,6 +24,8 @@ const routes = [
   "/copay-vs-coinsurance-vs-deductible",
   "/how-insurance-premiums-are-calculated",
   "/bundling-home-auto-insurance",
+  "/how-much-does-flood-insurance-cost-by-zone",
+  "/home-auto-bundle-savings-calculator",
   "/california-homeowners-insurance-guide",
   "/florida-homeowners-insurance-guide",
   "/texas-auto-insurance-guide",
