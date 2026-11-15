@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import OfficialSources from "../../components/OfficialSources";
+import CoverageShell from "../../components/coverage-shell";
 
 export const metadata: Metadata = {
   title: "HSA vs. FSA Guide: Limits, Rules & Which to Pick",
@@ -10,9 +11,10 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
+    <CoverageShell>
     <div className="mx-auto w-full max-w-3xl px-6 py-12">
       <p className="text-sm font-medium uppercase tracking-widest text-amber-200/80">Health insurance • HSA vs. FSA</p>
-      <h1 className="hero-title mt-4 text-3xl font-bold leading-tight sm:text-4xl">HSA vs. FSA: which account fits your health plan?</h1>
+      <h1 className="ins-interior-title mt-4 text-3xl font-bold leading-tight sm:text-4xl">HSA vs. FSA: which account fits your health plan?</h1>
       <p className="mt-5 text-base leading-relaxed text-slate-300 sm:text-lg">Health Savings Accounts and Flexible Spending Accounts both pay medical costs with pre-tax dollars, but they follow opposite philosophies. HSAs reward high-deductible plans with ownership, rollover, and investing, while FSAs offer simple use-it-or-lose-it funds inside any plan type. This guide compares eligibility, tax treatment, contribution frames, and rollover rules, then shows how to size contributions with real numbers. Tax and IRS figures change annually, so verify current-year limits on IRS.gov; any illustrative ranges are educational estimates, and account custodians below appear only as examples to compare.</p>
       <p className="mt-4 text-xs leading-relaxed text-slate-400">Updated: October 2026 — reviewed against publicly available 2026 insurer and state sources.</p>
         <section className="mt-10">
@@ -40,7 +42,7 @@ export default function Page() {
           <p className="mt-3 text-sm leading-relaxed text-slate-300 sm:text-base">Shop in this order: define the coverage limits and deductible that fit your budget and risk tolerance, gather the facts insurers ask for, request quotes on identical limits from several insurers or a broker who represents multiple carriers, compare exclusions and claim service alongside price, and confirm everything in the issued policy during any free-look or review period. Keep copies of quotes and the final policy together so you can verify that the issued terms match what you approved.</p>
           <p className="mt-3 text-sm leading-relaxed text-slate-300 sm:text-base">Common mistakes include overfunding an FSA and forfeiting balances, enrolling in an HSA without qualifying coverage, and missing the annual deadline for FSA elections during open enrollment.</p>
         </section>
-        <div className="glass-card mt-6 overflow-x-auto rounded-2xl">
+        <p className="ins-scrollcue">Scroll horizontally to see all columns</p><div className="ins-twrap mt-6 overflow-x-auto rounded-2xl" tabIndex={0} role="region" aria-label="Scrollable comparison table">
           <table className="w-full min-w-[560px] border-collapse">
             <thead>
               <tr><th className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-amber-200/80">Feature</th><th className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-amber-200/80">HSA</th><th className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-amber-200/80">Healthcare FSA</th></tr>
@@ -131,5 +133,6 @@ export default function Page() {
           </p>
         </section>
     </div>
+    </CoverageShell>
   );
 }

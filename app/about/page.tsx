@@ -4,6 +4,7 @@ export const metadata: Metadata = {
   title: "About",
   description:
     "Learn what insurance.loanpaylogic.com covers and how our educational insurance estimators work.",
+  alternates: { canonical: "https://insurance.loanpaylogic.com/about" },
 };
 
 export default function AboutPage() {

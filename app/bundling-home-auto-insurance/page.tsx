@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import OfficialSources from "../../components/OfficialSources";
+import CoverageShell from "../../components/coverage-shell";
 
 export const metadata: Metadata = {
   title: "Bundling Home & Auto Insurance: Savings & Tradeoffs",
@@ -10,9 +11,10 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
+    <CoverageShell>
     <div className="mx-auto w-full max-w-3xl px-6 py-12">
       <p className="text-sm font-medium uppercase tracking-widest text-amber-200/80">Auto + home • Bundling</p>
-      <h1 className="hero-title mt-4 text-3xl font-bold leading-tight sm:text-4xl">Bundling home and auto insurance</h1>
+      <h1 className="ins-interior-title mt-4 text-3xl font-bold leading-tight sm:text-4xl">Bundling home and auto insurance</h1>
       <p className="mt-5 text-base leading-relaxed text-slate-300 sm:text-lg">Placing home and auto coverage with one carrier group often trims both premiums, but the headline discount percentage is only half the story. Base rates per line decide whether a bundle truly saves, and specialty risks sometimes price better apart. This guide explains bundle mechanics, shows illustrative savings ranges, maps when to split lines, and gives comparison steps that prevent false bargains. All figures are illustrative estimates, and carrier names are only examples to compare.</p>
       <p className="mt-4 text-xs leading-relaxed text-slate-400">Updated: October 2026 — reviewed against publicly available 2026 insurer and state sources.</p>
         <section className="mt-10">
@@ -40,7 +42,7 @@ export default function Page() {
           <p className="mt-3 text-sm leading-relaxed text-slate-300 sm:text-base">Shop in this order: define the coverage limits and deductible that fit your budget and risk tolerance, gather the facts insurers ask for, request quotes on identical limits from several insurers or a broker who represents multiple carriers, compare exclusions and claim service alongside price, and confirm everything in the issued policy during any free-look or review period. Keep copies of quotes and the final policy together so you can verify that the issued terms match what you approved.</p>
           <p className="mt-3 text-sm leading-relaxed text-slate-300 sm:text-base">Common mistakes include chasing headline percentages while ignoring base rates, splitting policies mid-term without checking penalties, and assuming specialty risks fit standard bundles.</p>
         </section>
-        <div className="glass-card mt-6 overflow-x-auto rounded-2xl">
+        <p className="ins-scrollcue">Scroll horizontally to see all columns</p><div className="ins-twrap mt-6 overflow-x-auto rounded-2xl" tabIndex={0} role="region" aria-label="Scrollable comparison table">
           <table className="w-full min-w-[560px] border-collapse">
             <thead>
               <tr><th className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-amber-200/80">Structure</th><th className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-amber-200/80">Illustrative savings profile</th><th className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-amber-200/80">Best when</th></tr>
@@ -88,6 +90,7 @@ export default function Page() {
           <h2 className="text-2xl font-semibold text-white">Related guides</h2>
           <ul className="mt-3 list-disc space-y-2 pl-6 text-sm text-slate-300 sm:text-base">
             <li><Link href="/homeowners-insurance-cost-guide" className="text-amber-200 underline hover:text-amber-100">Homeowners cost guide</Link></li>
+            <li><Link href="/home-auto-bundle-savings-calculator" className="text-amber-200 underline hover:text-amber-100">Bundle savings calculator</Link></li>
             <li><Link href="/auto-insurance-cost-calculator" className="text-amber-200 underline hover:text-amber-100">Auto insurance cost calculator</Link></li>
             <li><Link href="/texas-auto-insurance-guide" className="text-amber-200 underline hover:text-amber-100">Texas auto insurance guide</Link></li>
             <li><Link href="/florida-homeowners-insurance-guide" className="text-amber-200 underline hover:text-amber-100">Florida homeowners guide</Link></li>
@@ -129,5 +132,6 @@ export default function Page() {
           </p>
         </section>
     </div>
+    </CoverageShell>
   );
 }

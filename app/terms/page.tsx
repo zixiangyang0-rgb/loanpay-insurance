@@ -4,6 +4,7 @@ export const metadata: Metadata = {
   title: "Terms of Service",
   description:
     "Terms of service for using insurance.loanpaylogic.com educational insurance content.",
+  alternates: { canonical: "https://insurance.loanpaylogic.com/terms" },
 };
 
 export default function TermsPage() {

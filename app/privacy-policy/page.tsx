@@ -4,6 +4,7 @@ export const metadata: Metadata = {
   title: "Privacy Policy",
   description:
     "Privacy policy for insurance.loanpaylogic.com: cookies, Google AdSense ads, consent choices (including non-personalized ads), and contact.",
+  alternates: { canonical: "https://insurance.loanpaylogic.com/privacy-policy" },
 };
 
 export default function PrivacyPolicyPage() {

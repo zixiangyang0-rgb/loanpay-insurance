@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import OfficialSources from "../../components/OfficialSources";
+import CoverageShell from "../../components/coverage-shell";
 
 export const metadata: Metadata = {
   title: "How Insurance Premiums Are Calculated",
@@ -10,9 +11,10 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
+    <CoverageShell>
     <div className="mx-auto w-full max-w-3xl px-6 py-12">
       <p className="text-sm font-medium uppercase tracking-widest text-amber-200/80">Insurance basics • Premiums</p>
-      <h1 className="hero-title mt-4 text-3xl font-bold leading-tight sm:text-4xl">How insurance premiums are calculated</h1>
+      <h1 className="ins-interior-title mt-4 text-3xl font-bold leading-tight sm:text-4xl">How insurance premiums are calculated</h1>
       <p className="mt-5 text-base leading-relaxed text-slate-300 sm:text-lg">Premiums are not guesses: they are filed prices built from claim projections, expenses, taxes, and regulated margins, personalized by rating factors you partly control. This guide dissects the premium dollar, maps rating factors across auto, home, life, and health lines, explains discounts and tiers, and shows how renewals evolve. All figures are illustrative estimates, and carrier names are only examples to compare.</p>
       <p className="mt-4 text-xs leading-relaxed text-slate-400">Updated: October 2026 — reviewed against publicly available 2026 insurer and state sources.</p>
         <section className="mt-10">
@@ -40,7 +42,7 @@ export default function Page() {
           <p className="mt-3 text-sm leading-relaxed text-slate-300 sm:text-base">Shop in this order: define the coverage limits and deductible that fit your budget and risk tolerance, gather the facts insurers ask for, request quotes on identical limits from several insurers or a broker who represents multiple carriers, compare exclusions and claim service alongside price, and confirm everything in the issued policy during any free-look or review period. Keep copies of quotes and the final policy together so you can verify that the issued terms match what you approved.</p>
           <p className="mt-3 text-sm leading-relaxed text-slate-300 sm:text-base">Common mistakes include comparing mismatched limits, hiding drivers or risks, and letting renewals auto-pay without checking limit drift or expiring discounts.</p>
         </section>
-        <div className="glass-card mt-6 overflow-x-auto rounded-2xl">
+        <p className="ins-scrollcue">Scroll horizontally to see all columns</p><div className="ins-twrap mt-6 overflow-x-auto rounded-2xl" tabIndex={0} role="region" aria-label="Scrollable comparison table">
           <table className="w-full min-w-[560px] border-collapse">
             <thead>
               <tr><th className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-amber-200/80">Premium component</th><th className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-amber-200/80">What it covers</th><th className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-amber-200/80">Moves with</th></tr>
@@ -136,5 +138,6 @@ export default function Page() {
           </p>
         </section>
     </div>
+    </CoverageShell>
   );
 }

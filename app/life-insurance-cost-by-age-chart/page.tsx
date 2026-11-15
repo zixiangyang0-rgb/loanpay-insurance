@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import OfficialSources from "../../components/OfficialSources";
+import CoverageShell from "../../components/coverage-shell";
 
 export const metadata: Metadata = {
   title: "Life Insurance Cost by Age Chart (Illustrative 2026)",
@@ -10,9 +11,10 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
+    <CoverageShell>
     <div className="mx-auto w-full max-w-3xl px-6 py-12">
       <p className="text-sm font-medium uppercase tracking-widest text-amber-200/80">Life insurance • Cost by age</p>
-      <h1 className="hero-title mt-4 text-3xl font-bold leading-tight sm:text-4xl">Life insurance cost by age chart</h1>
+      <h1 className="ins-interior-title mt-4 text-3xl font-bold leading-tight sm:text-4xl">Life insurance cost by age chart</h1>
       <p className="mt-5 text-base leading-relaxed text-slate-300 sm:text-lg">Life insurance premiums rise with every birthday because mortality risk rises with age, and the slope steepens заметно after 40. This guide presents illustrative monthly ranges for $500,000 of level term by issue age, health class, and term length so you can budget and see why locking coverage earlier costs less. All figures are illustrative educational ranges, not quotes, and carrier names appear only as examples of insurers shoppers compare — no source can name a factual best insurer, so compare quotes for your profile.</p>
       <p className="mt-4 text-xs leading-relaxed text-slate-400">Updated: October 2026 — reviewed against publicly available 2026 insurer and state sources.</p>
         <section className="mt-10">
@@ -40,7 +42,7 @@ export default function Page() {
           <p className="mt-3 text-sm leading-relaxed text-slate-300 sm:text-base">Shop in this order: define the coverage limits and deductible that fit your budget and risk tolerance, gather the facts insurers ask for, request quotes on identical limits from several insurers or a broker who represents multiple carriers, compare exclusions and claim service alongside price, and confirm everything in the issued policy during any free-look or review period. Keep copies of quotes and the final policy together so you can verify that the issued terms match what you approved.</p>
           <p className="mt-3 text-sm leading-relaxed text-slate-300 sm:text-base">Common mistakes include buying only enough to cover the mortgage while ignoring income replacement, naming no contingent beneficiary, letting an old policy lapse before replacement coverage is issued, and relying solely on one to two times salary in employer group coverage that ends with employment.</p>
         </section>
-        <div className="glass-card mt-6 overflow-x-auto rounded-2xl">
+        <p className="ins-scrollcue">Scroll horizontally to see all columns</p><div className="ins-twrap mt-6 overflow-x-auto rounded-2xl" tabIndex={0} role="region" aria-label="Scrollable comparison table">
           <table className="w-full min-w-[560px] border-collapse">
             <thead>
               <tr><th className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-amber-200/80">Issue age</th><th className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-amber-200/80">20-year $500k Preferred Plus (illustrative)</th><th className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-amber-200/80">20-year $500k Standard (illustrative)</th><th className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-amber-200/80">30-year $500k Preferred Plus (illustrative)</th></tr>
@@ -132,5 +134,6 @@ export default function Page() {
           </p>
         </section>
     </div>
+    </CoverageShell>
   );
 }

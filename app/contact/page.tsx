@@ -4,6 +4,7 @@ export const metadata: Metadata = {
   title: "Contact",
   description:
     "Contact insurance.loanpaylogic.com for feedback on educational insurance guides.",
+  alternates: { canonical: "https://insurance.loanpaylogic.com/contact" },
 };
 
 export default function ContactPage() {

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import OfficialSources from "../../components/OfficialSources";
+import CoverageShell from "../../components/coverage-shell";
 
 export const metadata: Metadata = {
   title: "Travel Insurance Guide: Trip, Medical & Evacuation",
@@ -10,9 +11,10 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
+    <CoverageShell>
     <div className="mx-auto w-full max-w-3xl px-6 py-12">
       <p className="text-sm font-medium uppercase tracking-widest text-amber-200/80">Other insurance • Travel</p>
-      <h1 className="hero-title mt-4 text-3xl font-bold leading-tight sm:text-4xl">Travel insurance guide</h1>
+      <h1 className="ins-interior-title mt-4 text-3xl font-bold leading-tight sm:text-4xl">Travel insurance guide</h1>
       <p className="mt-5 text-base leading-relaxed text-slate-300 sm:text-lg">One cancelled trip or one foreign hospital visit can erase years of careful travel savings, which is why comprehensive travel insurance bundles cancellation, medical, evacuation, and baggage protection behind a single premium. This guide explains each benefit, shows how pre-existing waivers and cancel-for-any-reason upgrades work, provides illustrative cost frames, and gives buying steps that avoid the most common gaps. All figures are illustrative estimates, and provider names are only examples to compare.</p>
       <p className="mt-4 text-xs leading-relaxed text-slate-400">Updated: October 2026 — reviewed against publicly available 2026 insurer and state sources.</p>
         <section className="mt-10">
@@ -40,7 +42,7 @@ export default function Page() {
           <p className="mt-3 text-sm leading-relaxed text-slate-300 sm:text-base">Shop in this order: define the coverage limits and deductible that fit your budget and risk tolerance, gather the facts insurers ask for, request quotes on identical limits from several insurers or a broker who represents multiple carriers, compare exclusions and claim service alongside price, and confirm everything in the issued policy during any free-look or review period. Keep copies of quotes and the final policy together so you can verify that the issued terms match what you approved.</p>
           <p className="mt-3 text-sm leading-relaxed text-slate-300 sm:text-base">Common mistakes include buying after the waiver window closes, underinsuring trip cost, assuming domestic health coverage works abroad, and skipping evacuation limits on remote itineraries.</p>
         </section>
-        <div className="glass-card mt-6 overflow-x-auto rounded-2xl">
+        <p className="ins-scrollcue">Scroll horizontally to see all columns</p><div className="ins-twrap mt-6 overflow-x-auto rounded-2xl" tabIndex={0} role="region" aria-label="Scrollable comparison table">
           <table className="w-full min-w-[560px] border-collapse">
             <thead>
               <tr><th className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-amber-200/80">Benefit</th><th className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-amber-200/80">What it pays</th><th className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-amber-200/80">Prioritize when</th></tr>
@@ -130,5 +132,6 @@ export default function Page() {
           </p>
         </section>
     </div>
+    </CoverageShell>
   );
 }

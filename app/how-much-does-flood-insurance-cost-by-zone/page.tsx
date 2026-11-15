@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import OfficialSources from "../../components/OfficialSources";
+import CoverageShell from "../../components/coverage-shell";
 
 export const metadata: Metadata = {
   title: "How Much Does Flood Insurance Cost by Zone in 2026?",
@@ -10,9 +11,10 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
+    <CoverageShell>
     <div className="mx-auto w-full max-w-3xl px-6 py-12">
       <p className="text-sm font-medium uppercase tracking-widest text-amber-200/80">Home insurance • Flood costs by zone</p>
-      <h1 className="hero-title mt-4 text-3xl font-bold leading-tight sm:text-4xl">How much does flood insurance cost by zone in 2026?</h1>
+      <h1 className="ins-interior-title mt-4 text-3xl font-bold leading-tight sm:text-4xl">How much does flood insurance cost by zone in 2026?</h1>
       <p className="mt-5 text-base leading-relaxed text-slate-300 sm:text-lg">Flood insurance premiums in 2026 vary enormously by where your home sits on the flood map, how high it stands above expected water levels, and whether you buy through the National Flood Insurance Program or a private carrier. A home in a low-risk X zone can illustrate a few hundred dollars per year, while a coastal V-zone home near wave action can illustrate several thousand. This guide breaks down illustrative cost bands by FEMA zone, explains which rating factors move premiums most within each zone, and gives a zone-by-zone shopping plan. All figures are illustrative estimates for education, not quotes, and program details should be verified with current NFIP documents and licensed agents.</p>
       <p className="mt-4 text-xs leading-relaxed text-slate-400">Updated: October 2026 — reviewed against publicly available 2026 insurer and state sources.</p>
         <section className="mt-10">
@@ -45,7 +47,7 @@ export default function Page() {
           <p className="mt-3 text-sm leading-relaxed text-slate-300 sm:text-base">Shop in this order: confirm your exact zone and base flood elevation from the current FEMA map, get an elevation certificate if elevation could favor you, request NFIP and at least one private quote on identical building limits, contents limits, and deductibles, compare waiting periods and basement terms alongside premium, and bind coverage during dry months so the 30-day NFIP wait expires before storm season. Keep quotes and the issued policy together so you can verify that the final terms match what you approved.</p>
           <p className="mt-3 text-sm leading-relaxed text-slate-300 sm:text-base">Common mistakes include assuming zone X means zero risk, waiting until forecasts appear against the 30-day wait, and insuring the building while skipping contents that floodwater destroys first. Map revisions also trap owners: a remap from X to AE can trigger a new lender requirement overnight, so recheck your map after every community map update.</p>
         </section>
-        <div className="glass-card mt-6 overflow-x-auto rounded-2xl">
+        <p className="ins-scrollcue">Scroll horizontally to see all columns</p><div className="ins-twrap mt-6 overflow-x-auto rounded-2xl" tabIndex={0} role="region" aria-label="Scrollable comparison table">
           <table className="w-full min-w-[560px] border-collapse">
             <thead>
               <tr><th className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-amber-200/80">FEMA zone</th><th className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-amber-200/80">Illustrative NFIP range</th><th className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-amber-200/80">Watch for</th></tr>
@@ -122,5 +124,6 @@ export default function Page() {
           </p>
         </section>
     </div>
+    </CoverageShell>
   );
 }

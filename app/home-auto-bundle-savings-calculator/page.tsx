@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArticleFaqJsonLd } from "../../components/schema";
 import OfficialSources from "../../components/OfficialSources";
+import CoverageShell from "../../components/coverage-shell";
 
 export const metadata: Metadata = {
   title: "Home and Auto Bundle Savings Calculator: How Much Do You Save?",
@@ -41,6 +42,7 @@ const faqs = [
 
 export default function Page() {
   return (
+    <CoverageShell>
     <div className="mx-auto w-full max-w-3xl px-6 py-12">
       <ArticleFaqJsonLd
         path="/home-auto-bundle-savings-calculator"
@@ -51,7 +53,7 @@ export default function Page() {
       <p className="text-sm font-medium uppercase tracking-widest text-amber-200/80">
         Auto + home • Savings calculator
       </p>
-      <h1 className="hero-title mt-4 text-3xl font-bold leading-tight sm:text-4xl">
+      <h1 className="ins-interior-title mt-4 text-3xl font-bold leading-tight sm:text-4xl">
         Home and auto bundle savings calculator: how much do you save?
       </h1>
       <p className="mt-5 text-base leading-relaxed text-slate-300 sm:text-lg">
@@ -140,7 +142,7 @@ export default function Page() {
         </p>
       </section>
 
-      <div className="glass-card mt-6 overflow-x-auto rounded-2xl">
+      <p className="ins-scrollcue">Scroll horizontally to see all columns</p><div className="ins-twrap mt-6 overflow-x-auto rounded-2xl" tabIndex={0} role="region" aria-label="Scrollable comparison table">
         <table className="w-full min-w-[560px] border-collapse">
           <thead>
             <tr>
@@ -376,5 +378,6 @@ export default function Page() {
         </p>
       </section>
     </div>
+    </CoverageShell>
   );
 }

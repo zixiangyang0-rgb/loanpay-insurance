@@ -4,6 +4,7 @@ import TermEstimator from "./calculator";
 import AdSlot from "../../components/AdSlot";
 import { ArticleFaqJsonLd } from "../../components/schema";
 import OfficialSources from "../../components/OfficialSources";
+import CoverageShell from "../../components/coverage-shell";
 
 export const metadata: Metadata = {
   title: "Term Life Insurance Calculator: Estimate Your Coverage",
@@ -36,6 +37,7 @@ const faqs = [
 
 export default function Page() {
   return (
+    <CoverageShell>
     <div className="mx-auto w-full max-w-6xl px-6 py-12 lg:flex lg:gap-8">
       <ArticleFaqJsonLd
         path="/term-life-insurance-calculator"
@@ -46,7 +48,7 @@ export default function Page() {
       <div className="min-w-0 flex-1">
         <div className="mx-auto w-full max-w-3xl">
           <p className="text-sm font-medium uppercase tracking-widest text-amber-200/80">Life insurance • Term life</p>
-          <h1 className="hero-title mt-4 text-3xl font-bold leading-tight sm:text-4xl">Term life insurance calculator: estimate coverage and cost</h1>
+          <h1 className="ins-interior-title mt-4 text-3xl font-bold leading-tight sm:text-4xl">Term life insurance calculator: estimate coverage and cost</h1>
           <p className="mt-3 text-sm text-slate-400">
             By <span className="font-medium text-slate-200">LoanPay Insurance editorial team</span> · Updated October 2026 · Educational estimates only, not quotes
           </p>
@@ -79,7 +81,7 @@ export default function Page() {
             <p className="mt-3 text-sm leading-relaxed text-slate-300 sm:text-base">Shop in this order: decide the face amount and term using the worksheet below, gather your health facts (medications, height and weight, tobacco history, family history), request quotes from several carriers or a broker who represents multiple carriers, compare the financial-strength ratings and conversion terms alongside price, and apply with full disclosure so the issued class matches the illustration. Keep the illustration and the issued policy together so you can verify the health class and premium before the free-look period expires.</p>
             <p className="mt-3 text-sm leading-relaxed text-slate-300 sm:text-base">Common mistakes include buying only enough to cover the mortgage while ignoring income replacement, naming no contingent beneficiary, letting an old policy lapse before the replacement is issued, and assuming employer group coverage is enough. Group coverage of one to two times salary rarely covers a family with young children, and it usually ends when employment ends. Another frequent error is rounding down the term to save a few dollars a month, only to need new coverage at age 50 when rates are multiples higher.</p>
           </section>
-          <div className="glass-card mt-6 overflow-x-auto rounded-2xl">
+          <p className="ins-scrollcue">Scroll horizontally to see all columns</p><div className="ins-twrap mt-6 overflow-x-auto rounded-2xl" tabIndex={0} role="region" aria-label="Scrollable comparison table">
             <table className="w-full min-w-[560px] border-collapse">
               <thead>
                 <tr><th className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-amber-200/80">Age at issue</th><th className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-amber-200/80">Preferred Plus (illustrative)</th><th className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-amber-200/80">Standard (illustrative)</th></tr>
@@ -158,5 +160,6 @@ export default function Page() {
         </div>
       </aside>
     </div>
+    </CoverageShell>
   );
 }

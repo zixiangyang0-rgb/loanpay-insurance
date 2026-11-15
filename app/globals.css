@@ -191,3 +191,431 @@ input[type="range"]::-moz-range-thumb {
 .recharts-tooltip-wrapper {
   outline: none;
 }
+
+/* Coverage Decision Aid — homepage light scope ONLY (context-safe).
+   Body + guide/tool routes + .glass-* tool islands stay dark navy.
+   Everything below is scoped under .ins-light so hardcoded white text
+   on guide pages (text-white / text-slate-300) is never inverted. */
+.ins-light {
+  background: #f2f4f6;
+  color: #1e2732;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+}
+
+.ins-light a:focus-visible,
+.ins-light button:focus-visible,
+.ins-light div[tabindex]:focus-visible,
+.ins-light input:focus-visible {
+  outline: 2px solid #1d4ed8;
+  outline-offset: 2px;
+}
+
+.ins-wrap {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 16px 40px;
+}
+
+.ins-hero {
+  padding: 32px 0 6px;
+}
+
+.ins-eyebrow {
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #5b6b7e;
+  font-weight: 600;
+}
+
+.ins-h1 {
+  font-size: 31px;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  font-weight: 650;
+  color: #1e2732;
+  margin: 8px 0 0;
+  max-width: 22ch;
+}
+
+.ins-lede {
+  max-width: 64ch;
+  color: #394656;
+  margin-top: 10px;
+  font-size: 15px;
+}
+
+.ins-group {
+  padding: 18px 0 4px;
+}
+
+.ins-h2 {
+  font-size: 20px;
+  font-weight: 650;
+  color: #1e2732;
+}
+
+.ins-blurb {
+  font-size: 13.5px;
+  color: #4a5a6e;
+  margin-top: 4px;
+}
+
+.ins-grid {
+  display: grid;
+  gap: 12px;
+  margin-top: 12px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.ins-card {
+  display: block;
+  background: #fff;
+  border: 1px solid #cbd4de;
+  border-radius: 12px;
+  padding: 16px;
+  transition: transform 200ms ease, box-shadow 200ms ease, border-color 150ms ease;
+}
+
+.ins-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px -18px rgba(0, 0, 0, 0.25);
+  border-color: #1d4ed8;
+}
+
+.ins-card-title {
+  font-size: 16px;
+  font-weight: 650;
+  color: #1e2732;
+  line-height: 1.35;
+}
+
+.ins-card-desc {
+  font-size: 13.5px;
+  color: #394656;
+  margin-top: 6px;
+  line-height: 1.55;
+}
+
+.ins-card-cta {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #1d4ed8;
+  margin-top: 10px;
+}
+
+.ins-light .switch {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 16px 0 0;
+  padding: 0;
+}
+
+.ins-light .switch button {
+  border: 1px solid #cbd4de;
+  background: #fff;
+  color: #1e2732;
+  border-radius: 999px;
+  padding: 9px 16px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.ins-light .switch button[aria-pressed="true"] {
+  background: #2b3542;
+  border-color: #2b3542;
+  color: #fff;
+}
+
+.ins-light .matrixwrap {
+  margin-top: 8px;
+  overflow-x: auto;
+  background: #fff;
+  border: 1px solid #cbd4de;
+  border-radius: 12px;
+}
+
+.ins-light .scrollcue {
+  font-size: 12.5px;
+  color: #4a5a6e;
+  margin: 0;
+  padding: 10px 14px 0;
+}
+
+.ins-light .matrixwrap table {
+  width: 100%;
+  min-width: 640px;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.ins-light .matrixwrap th,
+.ins-light .matrixwrap td {
+  padding: 12px 14px;
+  border-bottom: 1px solid #cbd4de;
+  text-align: left;
+  vertical-align: top;
+  color: #1e2732;
+}
+
+.ins-light .matrixwrap thead th {
+  background: #2b3542;
+  color: #fff;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.ins-light .matrixwrap thead th a {
+  color: #fff;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.ins-light .matrixwrap tbody th {
+  position: sticky;
+  left: 0;
+  background: #fff;
+  font-weight: 650;
+}
+
+.ins-light .matrixwrap td a {
+  color: #1d4ed8;
+}
+
+.ins-light .matrixnote {
+  background: #fff;
+  border: 1px solid #cbd4de;
+  border-radius: 12px;
+  padding: 14px 16px;
+  margin-top: 12px;
+  font-size: 13.5px;
+  color: #394656;
+}
+
+.ins-light .matrixnote .hide-row {
+  margin: 8px 0 0;
+  font-size: 13px;
+}
+
+.ins-light .matrix-figure {
+  margin: 12px 0 0;
+  background: #fff;
+  border: 1px solid #cbd4de;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.ins-light .matrix-figure img {
+  display: block;
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  object-position: 50% 70%;
+}
+
+.ins-light .matrix-figure figcaption,
+.ins-light .ins-note-text {
+  color: #394656;
+}
+
+.ins-light .matrix-figure figcaption {
+  font-size: 12px;
+  padding: 9px 11px;
+}
+
+.ins-light .matrix-figure figcaption a {
+  color: #1d4ed8;
+}
+
+.ins-light .ins-note {
+  background: #fff;
+  border: 1px solid #cbd4de;
+  border-radius: 12px;
+  padding: 20px;
+  margin-top: 18px;
+}
+
+.ins-light .ins-note-text {
+  font-size: 13.5px;
+  margin-top: 8px;
+  line-height: 1.65;
+}
+
+.ins-light .ins-note-muted {
+  color: #4a5a6e;
+}
+
+.ins-light .ins-spacer {
+  height: 24px;
+}
+
+@media (max-width: 900px) {
+  .ins-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .ins-h1 {
+    font-size: 25px;
+  }
+}
+
+@media (max-width: 640px) {
+  .ins-grid {
+    grid-template-columns: 1fr;
+  }
+  .ins-h1 {
+    font-size: 24px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ins-light *,
+  .ins-card {
+    transition: none !important;
+    transform: none !important;
+  }
+}
+
+/* Coverage Decision Aid — interior reading scope (per-route opt-in ONLY).
+   Body + layout chrome + .glass-* estimator islands stay dark navy.
+   Everything below is scoped under .ins-interior so hardcoded slate/white
+   guide text is re-inked ONLY inside opted-in interiors. Estimator islands
+   ([aria-label*="estimator"]) are explicitly exempted and restored after. */
+.ins-interior {
+  background: #f2f4f6;
+  color: #1e2732;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+}
+
+.ins-interior a:focus-visible,
+.ins-interior button:focus-visible,
+.ins-interior div[tabindex]:focus-visible,
+.ins-interior input:focus-visible,
+.ins-interior summary:focus-visible {
+  outline: 2px solid #1d4ed8;
+  outline-offset: 2px;
+}
+
+.ins-interior-title {
+  color: #1e2732;
+  letter-spacing: -0.01em;
+}
+
+.ins-interior .text-white {
+  color: #1e2732;
+}
+
+.ins-interior .text-slate-300,
+.ins-interior .text-slate-200 {
+  color: #394656;
+}
+
+.ins-interior .text-slate-400 {
+  color: #4a5a6e;
+}
+
+.ins-interior .text-amber-200\/80 {
+  color: #5b6b7e;
+}
+
+.ins-interior a.text-amber-200 {
+  color: #1d4ed8;
+}
+
+.ins-interior a.text-amber-200:hover {
+  color: #173fa8;
+}
+
+.ins-interior .border-white\/10 {
+  border-color: #cbd4de;
+}
+
+.ins-interior .glass-card:not([aria-label*="estimator"]),
+.ins-interior .glass-panel {
+  background: #fff;
+  border: 1px solid #cbd4de;
+  backdrop-filter: none;
+  box-shadow: 0 10px 28px -18px rgba(0, 0, 0, 0.25);
+}
+
+.ins-interior .ins-scrollcue {
+  font-size: 12.5px;
+  color: #4a5a6e;
+  margin: 0 0 8px;
+}
+
+.ins-interior .ins-twrap {
+  overflow-x: auto;
+  background: #fff;
+  border: 1px solid #cbd4de;
+  border-radius: 12px;
+}
+
+.ins-interior .ins-twrap table {
+  width: 100%;
+  min-width: 560px;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.ins-interior .ins-twrap th,
+.ins-interior .ins-twrap td {
+  padding: 12px 14px;
+  border-bottom: 1px solid #cbd4de;
+  text-align: left;
+  vertical-align: top;
+  color: #1e2732;
+}
+
+.ins-interior .ins-twrap thead th {
+  background: #2b3542;
+  color: #fff;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.ins-interior .ins-twrap tbody th {
+  position: sticky;
+  left: 0;
+  background: #fff;
+}
+
+/* Estimator islands keep actual dark contrast (byte-identical components). */
+.ins-interior [aria-label*="estimator"].glass-card {
+  background: linear-gradient(180deg, rgba(8, 15, 28, 0.95), rgba(4, 9, 18, 0.86));
+  border: 1px solid rgba(255, 248, 235, 0.1);
+  backdrop-filter: blur(34px);
+  box-shadow:
+    0 28px 90px rgba(0, 0, 0, 0.52),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+.ins-interior [aria-label*="estimator"] .text-white {
+  color: #fff;
+}
+
+.ins-interior [aria-label*="estimator"] .text-slate-300 {
+  color: rgb(203 213 225);
+}
+
+.ins-interior [aria-label*="estimator"] .text-slate-400 {
+  color: rgb(148 163 184);
+}
+
+.ins-interior [aria-label*="estimator"] .text-amber-200 {
+  color: rgb(253 230 138);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ins-interior *,
+  .ins-twrap {
+    transition: none !important;
+    transform: none !important;
+  }
+}

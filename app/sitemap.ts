@@ -40,10 +40,16 @@ const routes = [
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date("2026-10-01");
-  return routes.map((route) => ({
-    url: `${BASE}${route}`,
-    lastModified: now,
-    changeFrequency: route === "" ? "weekly" : "monthly",
-    priority: route === "" ? 1 : route.startsWith("/term") || route.startsWith("/health") ? 0.9 : 0.8,
-  }));
+  return routes.map((route) => {
+    const entry: MetadataRoute.Sitemap[number] = {
+      url: `${BASE}${route}`,
+      lastModified: now,
+      changeFrequency: route === "" ? "weekly" : "monthly",
+      priority: route === "" ? 1 : route.startsWith("/term") || route.startsWith("/health") ? 0.9 : 0.8,
+    };
+    if (route === "") {
+      entry.images = [`${BASE}/photos/insurance.webp`];
+    }
+    return entry;
+  });
 }

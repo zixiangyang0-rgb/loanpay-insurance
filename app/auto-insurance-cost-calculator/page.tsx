@@ -4,6 +4,7 @@ import AutoEstimator from "./calculator";
 import AdSlot from "../../components/AdSlot";
 import { ArticleFaqJsonLd } from "../../components/schema";
 import OfficialSources from "../../components/OfficialSources";
+import CoverageShell from "../../components/coverage-shell";
 
 export const metadata: Metadata = {
   title: "Auto Insurance Cost Calculator: Estimate Your Premium",
@@ -36,6 +37,7 @@ const faqs = [
 
 export default function Page() {
   return (
+    <CoverageShell>
     <div className="mx-auto w-full max-w-6xl px-6 py-12 lg:flex lg:gap-8">
       <ArticleFaqJsonLd
         path="/auto-insurance-cost-calculator"
@@ -46,7 +48,7 @@ export default function Page() {
       <div className="min-w-0 flex-1">
         <div className="mx-auto w-full max-w-3xl">
           <p className="text-sm font-medium uppercase tracking-widest text-amber-200/80">Auto insurance • Cost calculator</p>
-          <h1 className="hero-title mt-4 text-3xl font-bold leading-tight sm:text-4xl">Auto insurance cost calculator: estimate your premium</h1>
+          <h1 className="ins-interior-title mt-4 text-3xl font-bold leading-tight sm:text-4xl">Auto insurance cost calculator: estimate your premium</h1>
           <p className="mt-3 text-sm text-slate-400">
             By <span className="font-medium text-slate-200">LoanPay Insurance editorial team</span> · Updated October 2026 · Educational estimates only, not quotes
           </p>
@@ -79,7 +81,7 @@ export default function Page() {
             <p className="mt-3 text-sm leading-relaxed text-slate-300 sm:text-base">Shop in this order: define the coverage limits and deductible that fit your budget and risk tolerance, gather the facts insurers ask for, request quotes on identical limits from several insurers or a broker who represents multiple carriers, compare exclusions and claim service alongside price, and confirm everything in the issued policy during any free-look or review period. Keep copies of quotes and the final policy together so you can verify that the issued terms match what you approved.</p>
             <p className="mt-3 text-sm leading-relaxed text-slate-300 sm:text-base">Common mistakes include buying state minimums that leave assets exposed, setting deductibles without the savings to cover them, and forgetting to re-shop after moves, birthdays, or record improvements.</p>
           </section>
-          <div className="glass-card mt-6 overflow-x-auto rounded-2xl">
+          <p className="ins-scrollcue">Scroll horizontally to see all columns</p><div className="ins-twrap mt-6 overflow-x-auto rounded-2xl" tabIndex={0} role="region" aria-label="Scrollable comparison table">
             <table className="w-full min-w-[560px] border-collapse">
               <thead>
                 <tr><th className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-amber-200/80">Driver profile</th><th className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-amber-200/80">Liability-only, state minimum (illustrative)</th><th className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-amber-200/80">Full coverage, $500 deductibles (illustrative)</th></tr>
@@ -163,5 +165,6 @@ export default function Page() {
         </div>
       </aside>
     </div>
+    </CoverageShell>
   );
 }
